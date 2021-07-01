@@ -1,0 +1,2491 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Proof of Norway API",
+    "version" : "v1"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8090/",
+    "description" : "Generated server url"
+  } ],
+  "paths" : {
+    "/api/v1/user/{id}" : {
+      "put" : {
+        "tags" : [ "user-rest-controller-user" ],
+        "summary" : "Updates an User object.",
+        "operationId" : "updateUser",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UserDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "user-rest-controller-user" ],
+        "summary" : "Delete an specific User",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/locations/{id}" : {
+      "put" : {
+        "tags" : [ "event-address-rest-controller" ],
+        "summary" : "Update an EventAddress",
+        "operationId" : "updateItem",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/EventAddressDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EventAddressDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "event-address-rest-controller" ],
+        "summary" : "Delete an EventAddress by its id",
+        "operationId" : "delete_2",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EventAddressDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/item/{id}" : {
+      "get" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Get an item by its id",
+        "operationId" : "findById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Alter the content of an existing item",
+        "operationId" : "updateItem_1",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ItemRequestDTO"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Delete an specific item",
+        "operationId" : "delete_3",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/media/upload" : {
+      "post" : {
+        "tags" : [ "media-rest-controller" ],
+        "operationId" : "saveUpload",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ItemRequestDTO"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MediaData"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/item" : {
+      "get" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Get all Items",
+        "operationId" : "findAll_2",
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      },
+      "post" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Create an Item",
+        "operationId" : "saveItem",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ItemRequestDTO"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/auth/signup" : {
+      "post" : {
+        "tags" : [ "authentication-controller" ],
+        "operationId" : "registerNewUser",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SignupRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/signin" : {
+      "post" : {
+        "tags" : [ "authentication-controller" ],
+        "operationId" : "authenticateUser",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/videos/stream/{fileType}/{fileName}" : {
+      "get" : {
+        "tags" : [ "video-stream-controller" ],
+        "summary" : "Get an video  as byte array by its file name",
+        "operationId" : "streamVideo",
+        "parameters" : [ {
+          "name" : "serverHttpResponse",
+          "in" : "query",
+          "required" : true
+        }, {
+          "name" : "Range",
+          "in" : "header",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "fileType",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "fileName",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MediaData"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/videos/play/{mediaId}" : {
+      "get" : {
+        "tags" : [ "video-stream-controller" ],
+        "summary" : "Get an video  as resource by its id",
+        "operationId" : "getVideos",
+        "parameters" : [ {
+          "name" : "mediaId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MediaData"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/videos/download/{filename}" : {
+      "get" : {
+        "tags" : [ "video-stream-controller" ],
+        "summary" : "Download video by its name",
+        "operationId" : "downloadFile",
+        "parameters" : [ {
+          "name" : "filename",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MediaData"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/user" : {
+      "get" : {
+        "tags" : [ "user-rest-controller-user" ],
+        "summary" : "Get all users",
+        "operationId" : "findAll",
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/user/{userId}" : {
+      "get" : {
+        "tags" : [ "user-rest-controller-user" ],
+        "summary" : "Get a User by its id",
+        "operationId" : "findByUserId",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/user/paginated" : {
+      "get" : {
+        "tags" : [ "user-rest-controller-user" ],
+        "operationId" : "findAllPaginated",
+        "parameters" : [ {
+          "name" : "pageable",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Pageable"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/user/byUserName/{username}" : {
+      "get" : {
+        "tags" : [ "user-rest-controller-user" ],
+        "operationId" : "findByUserName",
+        "parameters" : [ {
+          "name" : "username",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/user/byEmail/{email}" : {
+      "get" : {
+        "tags" : [ "user-rest-controller-user" ],
+        "operationId" : "findByEmail",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/media" : {
+      "get" : {
+        "tags" : [ "media-rest-controller" ],
+        "summary" : "Get all media object representations",
+        "operationId" : "getAll",
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MediaData"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/media/images/{imageId}" : {
+      "get" : {
+        "tags" : [ "media-rest-controller" ],
+        "summary" : "Get an image  as resource by its id",
+        "operationId" : "getImageAsResource",
+        "parameters" : [ {
+          "name" : "imageId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MediaData"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/media/image/asByteArray/{imageId}" : {
+      "get" : {
+        "tags" : [ "media-rest-controller" ],
+        "summary" : "Get an image as byte array by its id",
+        "operationId" : "getImageAsByteArray",
+        "parameters" : [ {
+          "name" : "imageId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MediaData"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/locations" : {
+      "get" : {
+        "tags" : [ "event-address-rest-controller" ],
+        "summary" : "Find all EventAddresses",
+        "operationId" : "findAll_1",
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EventAddressDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/locations/byUserId/{userId}" : {
+      "get" : {
+        "tags" : [ "event-address-rest-controller" ],
+        "summary" : "Find an EventAddress by the userid from the User that posted the event",
+        "operationId" : "findByUserId_1",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EventAddressDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/locations/byCityAndCountry/{city}/{country}" : {
+      "get" : {
+        "tags" : [ "event-address-rest-controller" ],
+        "summary" : "Find an EventAddress by its city and country",
+        "operationId" : "findByCityAndCountry",
+        "parameters" : [ {
+          "name" : "city",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "country",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EventAddressDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/item/search/{text}" : {
+      "get" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Search items by text in the text content field",
+        "operationId" : "fullTextSearch",
+        "parameters" : [ {
+          "name" : "text",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "pageable",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Pageable"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/item/paginated" : {
+      "get" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Get all items paginated",
+        "operationId" : "findAllPaginated_1",
+        "parameters" : [ {
+          "name" : "pageable",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Pageable"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/item/paginated/byemail/{email}" : {
+      "get" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Get all items by user's email",
+        "operationId" : "all",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "pageable",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Pageable"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/item/paginated/byUserName/{userName}" : {
+      "get" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Get all items by user's userName",
+        "operationId" : "findByUserName_1",
+        "parameters" : [ {
+          "name" : "userName",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "pageable",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Pageable"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/item/byCityAndCountry/{city}/{country}" : {
+      "get" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Get all items by city and country",
+        "operationId" : "byCityAndCountry",
+        "parameters" : [ {
+          "name" : "city",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "country",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/auth/logout" : {
+      "get" : {
+        "tags" : [ "authentication-controller" ],
+        "operationId" : "logoutPage",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user/byUserName/{userName}" : {
+      "delete" : {
+        "tags" : [ "user-rest-controller-user" ],
+        "summary" : "Delete an specific User by name",
+        "operationId" : "deleteUserByUserName",
+        "parameters" : [ {
+          "name" : "userName",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/media/{mediaId}" : {
+      "delete" : {
+        "tags" : [ "media-rest-controller" ],
+        "summary" : "Delete an image by its id",
+        "operationId" : "delete_1",
+        "parameters" : [ {
+          "name" : "mediaId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MediaData"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/media/all/" : {
+      "delete" : {
+        "tags" : [ "media-rest-controller" ],
+        "summary" : "Delete all images",
+        "operationId" : "deleteAll",
+        "responses" : {
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          },
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MediaData"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/locations/all/" : {
+      "delete" : {
+        "tags" : [ "event-address-rest-controller" ],
+        "summary" : "Delete all EventAddresses - needs to have delete privileges.",
+        "operationId" : "deleteAll_1",
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EventAddressDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/item/all/" : {
+      "delete" : {
+        "tags" : [ "item-rest-controller" ],
+        "summary" : "Delete all items(only for users with admin role",
+        "operationId" : "deleteAll_2",
+        "responses" : {
+          "200" : {
+            "description" : "Request OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ItemResponseDTO"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "A generic error occurred on the server"
+          },
+          "415" : {
+            "description" : "Unsupported type: representation not supported for the resource"
+          },
+          "503" : {
+            "description" : "Service Unavailable "
+          },
+          "401" : {
+            "description" : "Wrong credentials"
+          },
+          "403" : {
+            "description" : "You do not have privileges  to see this information"
+          },
+          "404" : {
+            "description" : "Entity not found"
+          },
+          "400" : {
+            "description" : "Invalid id supplied"
+          },
+          "412" : {
+            "description" : "One or more conditions in the request header fields evaluated to false"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Address" : {
+        "required" : [ "city", "country", "street" ],
+        "type" : "object",
+        "properties" : {
+          "telephone" : {
+            "type" : "string"
+          },
+          "mobile" : {
+            "type" : "string"
+          },
+          "street" : {
+            "type" : "string"
+          },
+          "streetNumber" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "zipCode" : {
+            "type" : "string"
+          },
+          "county" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "additionalInformation" : {
+            "type" : "string"
+          },
+          "latitude" : {
+            "type" : "string"
+          },
+          "longitude" : {
+            "type" : "string"
+          }
+        }
+      },
+      "UserDTO" : {
+        "type" : "object",
+        "properties" : {
+          "userId" : {
+            "type" : "string"
+          },
+          "username" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          },
+          "firstName" : {
+            "type" : "string"
+          },
+          "lastName" : {
+            "type" : "string"
+          },
+          "placeOfBirth" : {
+            "type" : "string"
+          },
+          "dateOfBirth" : {
+            "type" : "string"
+          },
+          "registrationDate" : {
+            "type" : "string"
+          },
+          "accountNonExpired" : {
+            "type" : "string"
+          },
+          "credentialsNonExpired" : {
+            "type" : "string"
+          },
+          "accountNonLocked" : {
+            "type" : "string"
+          },
+          "enabled" : {
+            "type" : "string"
+          },
+          "address" : {
+            "$ref" : "#/components/schemas/Address"
+          },
+          "roles" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "EventAddressDTO" : {
+        "type" : "object",
+        "properties" : {
+          "addressId" : {
+            "type" : "string"
+          },
+          "street" : {
+            "type" : "string"
+          },
+          "streetNumber" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "zipCode" : {
+            "type" : "string"
+          },
+          "county" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "additionalInformation" : {
+            "type" : "string"
+          },
+          "areaName" : {
+            "type" : "string"
+          },
+          "latitude" : {
+            "type" : "string"
+          },
+          "longitude" : {
+            "type" : "string"
+          },
+          "item" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ItemRequestDTO" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "copyright" : {
+            "type" : "string"
+          },
+          "textContent" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "creationDate" : {
+            "type" : "string"
+          },
+          "eventDate" : {
+            "type" : "string"
+          },
+          "lastUpdateOn" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "lastUpdateBy" : {
+            "type" : "string"
+          },
+          "fileName" : {
+            "type" : "string"
+          },
+          "fileDate" : {
+            "type" : "string"
+          },
+          "mediaDescription" : {
+            "type" : "string"
+          },
+          "latitude" : {
+            "type" : "string"
+          },
+          "longitude" : {
+            "type" : "string"
+          },
+          "street" : {
+            "type" : "string"
+          },
+          "streetNumber" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "county" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "zipCode" : {
+            "type" : "string"
+          },
+          "areaName" : {
+            "type" : "string"
+          },
+          "additionalInformation" : {
+            "type" : "string"
+          },
+          "tags" : {
+            "type" : "string"
+          },
+          "categories" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Category" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "items" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Item"
+            }
+          }
+        }
+      },
+      "EventAddress" : {
+        "type" : "object",
+        "properties" : {
+          "addressId" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "street" : {
+            "type" : "string"
+          },
+          "streetNumber" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "zipCode" : {
+            "type" : "string"
+          },
+          "county" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "additionalInformation" : {
+            "type" : "string"
+          },
+          "areaName" : {
+            "type" : "string"
+          },
+          "latitude" : {
+            "type" : "string"
+          },
+          "longitude" : {
+            "type" : "string"
+          },
+          "item" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }
+      },
+      "Item" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "copyright" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "textContent" : {
+            "type" : "string"
+          },
+          "creationDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "eventDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "lastUpdateOn" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "lastUpdateBy" : {
+            "type" : "string"
+          },
+          "published" : {
+            "type" : "boolean"
+          },
+          "categories" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Category"
+            }
+          },
+          "tags" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Tag"
+            }
+          },
+          "medias" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/MediaData"
+            }
+          },
+          "appUser" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "eventAddress" : {
+            "$ref" : "#/components/schemas/EventAddress"
+          }
+        }
+      },
+      "ItemResponseDTO" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "copyright" : {
+            "type" : "string"
+          },
+          "textContent" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "creationDate" : {
+            "type" : "string"
+          },
+          "eventDate" : {
+            "type" : "string"
+          },
+          "lastUpdateOn" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "lastUpdateBy" : {
+            "type" : "string"
+          },
+          "tags" : {
+            "type" : "string"
+          },
+          "categories" : {
+            "type" : "string"
+          },
+          "eventAddress" : {
+            "$ref" : "#/components/schemas/EventAddress"
+          },
+          "user" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "medias" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/MediaData"
+            }
+          }
+        }
+      },
+      "MediaData" : {
+        "type" : "object",
+        "properties" : {
+          "mediaId" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "mediaName" : {
+            "type" : "string"
+          },
+          "uploaded" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "fileDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "mediaDescription" : {
+            "type" : "string"
+          },
+          "contentLength" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "mimeType" : {
+            "type" : "string"
+          },
+          "uri" : {
+            "type" : "string"
+          },
+          "downloadUrl" : {
+            "type" : "string"
+          },
+          "items" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Item"
+            }
+          },
+          "user" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }
+      },
+      "Tag" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "items" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Item"
+            }
+          }
+        }
+      },
+      "SignupRequest" : {
+        "required" : [ "city", "dateOfBirth", "email", "firstName", "lastName", "password", "placeOfBirth", "street", "username" ],
+        "type" : "object",
+        "properties" : {
+          "username" : {
+            "maxLength" : 20,
+            "minLength" : 3,
+            "type" : "string"
+          },
+          "email" : {
+            "maxLength" : 50,
+            "minLength" : 0,
+            "type" : "string"
+          },
+          "role" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "password" : {
+            "maxLength" : 40,
+            "minLength" : 6,
+            "type" : "string"
+          },
+          "firstName" : {
+            "maxLength" : 40,
+            "minLength" : 6,
+            "type" : "string"
+          },
+          "lastName" : {
+            "maxLength" : 40,
+            "minLength" : 6,
+            "type" : "string"
+          },
+          "placeOfBirth" : {
+            "maxLength" : 40,
+            "minLength" : 6,
+            "type" : "string"
+          },
+          "dateOfBirth" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "telephone" : {
+            "maxLength" : 25,
+            "minLength" : 0,
+            "type" : "string"
+          },
+          "mobile" : {
+            "maxLength" : 25,
+            "minLength" : 0,
+            "type" : "string"
+          },
+          "street" : {
+            "type" : "string"
+          },
+          "streetNumber" : {
+            "type" : "string"
+          },
+          "city" : {
+            "maxLength" : 25,
+            "minLength" : 0,
+            "type" : "string"
+          },
+          "zipCode" : {
+            "maxLength" : 15,
+            "minLength" : 0,
+            "type" : "string"
+          },
+          "county" : {
+            "maxLength" : 25,
+            "minLength" : 0,
+            "type" : "string"
+          },
+          "country" : {
+            "maxLength" : 25,
+            "minLength" : 0,
+            "type" : "string"
+          },
+          "additionalInformation" : {
+            "maxLength" : 200,
+            "minLength" : 0,
+            "type" : "string"
+          }
+        }
+      },
+      "LoginRequest" : {
+        "required" : [ "password", "username" ],
+        "type" : "object",
+        "properties" : {
+          "username" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Pageable" : {
+        "type" : "object",
+        "properties" : {
+          "page" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "size" : {
+            "minimum" : 1,
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "sort" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "bearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}
