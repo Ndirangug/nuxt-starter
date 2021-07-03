@@ -26,8 +26,10 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@types/node"
-    ]
+      "@types/node",
+      "@nuxtjs/auth-next",
+    ],
+    "importHelpers": true
   },
   "exclude": [
     "node_modules",
