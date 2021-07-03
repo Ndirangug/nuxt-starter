@@ -1,4 +1,4 @@
-# proofs-of-world
+# Nuxt Template Project
 
 ## Build Setup
 
